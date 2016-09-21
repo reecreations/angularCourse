@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+ <div class="container" ng-controller="LunchCheckController">
+   <input type="text" ng-model="placeholder">
+   <button ng-click="buttonClick(placeholder)">Press me</button>
+   <div>
+     {{message}}
+   </div>
+ </div>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
