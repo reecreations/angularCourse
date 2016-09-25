@@ -24,7 +24,7 @@
      <ul>
        <li ng-repeat="item in itemAdder.items" 'style="margin-top:10px;"'>
          Buy {{ item.quantity }} of {{ item.name }}
-         <button ng-click="itemAdder.removeItem($index);" class="btn btn-info btn-xs""><span class="glyphicon glyphicon-ok"></span> Buy</button></li>
+         <button ng-click="itemAdder.removeItem($index);" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-ok"></span> Buy</button></li>
        </li>
        <h4 ng-if="!itemAdder.items.length" class="alert alert-success">Everything is bought!</h4>
      </ul>
