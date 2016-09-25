@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en" ng-app='ShoppingListCheckOff'>
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      li {
+      margin:10px;
+      } 
+    </style>
+  </head>
+<body>
+  <div class="container">
+  <h1>Shopping List Check Off</h1>
+  <div class="row">
+
+    <!-- To Buy List -->
+    <div class="col-md-6" ng-controller='ToBuyShoppingController as itemAdder'>
+     <h2>To Buy:</h2>
+     <ul>
+       <li ng-repeat="item in itemAdder.items" 'style="margin-top:10px;"'>
+         Buy {{ item.quantity }} of {{ item.name }}
+         <button ng-click="itemAdder.removeItem($index);" class="btn btn-info btn-xs""><span class="glyphicon glyphicon-ok"></span> Buy</button></li>
+       </li>
+       <h4 ng-if="!itemAdder.items.length" class="alert alert-success">Everything is bought!</h4>
+     </ul>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6" ng-controller='AlreadyBoughtController as boughtItemList'>
+     <h2>Already Bought:</h2>
+     <ul>
+       <li ng-repeat="item in boughtItemList.items">
+         Bought {{ item.quantity }} {{ item.name }}
+       </li>
+       <h4 ng-if="!boughtItemList.items.length" class="alert alert-danger">Nothing bought yet.</h4>
+     </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
